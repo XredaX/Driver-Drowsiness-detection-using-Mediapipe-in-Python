@@ -69,11 +69,11 @@ def calculate_avg_ear(landmarks, left_eye_idxs, right_eye_idxs, image_w, image_h
     return Avg_EAR, (left_lm_coordinates, right_lm_coordinates)
 
 def plot_eye_landmarks(frame, left_lm_coordinates, right_lm_coordinates, color):
+    frame.flags.writeable = True  # Make frame writable
     for lm_coordinates in [left_lm_coordinates, right_lm_coordinates]:
         if lm_coordinates:
             for coord in lm_coordinates:
                 cv2.circle(frame, coord, 2, color, -1)
-
     frame = cv2.flip(frame, 1)
     return frame
 

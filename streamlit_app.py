@@ -40,6 +40,7 @@ shared_state = {"play_alarm": False}
 
 def video_frame_callback(frame: av.VideoFrame):
     frame = frame.to_ndarray(format="bgr24")
+    frame.flags.writeable = True  # Make frame writable
     frame, play_alarm = video_handler.process(frame, thresholds)
     with lock:
         shared_state["play_alarm"] = play_alarm
