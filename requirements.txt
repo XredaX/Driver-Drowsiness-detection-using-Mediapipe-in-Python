@@ -1,6 +1,7 @@
 cryptography==38.0.0
 pyOpenSSL
 aiortc
+opencv-python
 numpy
 pydub
 mediapipe

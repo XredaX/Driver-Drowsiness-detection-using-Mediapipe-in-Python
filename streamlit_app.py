@@ -7,8 +7,6 @@ from streamlit_webrtc import VideoHTMLAttributes, webrtc_streamer
 
 from audio_handling import AudioFrameHandler
 from drowsy_detection import VideoFrameHandler
-from ads import css_string
-
 
 # Define the audio file to use.
 alarm_file_path = os.path.join("audio", "wake_up.wav")
@@ -77,7 +75,3 @@ with col1:
         media_stream_constraints={"video": {"height": {"ideal": 480}}, "audio": True},
         video_html_attrs=VideoHTMLAttributes(autoPlay=True, controls=False, muted=False),
     )
-
-# with col2:
-#     # Banner for newsletter subscription, jobs, and consulting.
-#     st.markdown(css_string, unsafe_allow_html=True)
